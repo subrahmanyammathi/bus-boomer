@@ -7,7 +7,7 @@ import {
     formatCreditCardNumber,
     formatCVC,
     formatExpirationDate,
-    formatFormData
+    
 } from './utils'
 import 'react-credit-cards/es/styles-compiled.css'
 
@@ -57,7 +57,6 @@ export default class App extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        const { issuer } = this.state
         const formData = [...e.target.elements]
             .filter(d => d.name)
             .reduce((acc, d) => {
@@ -122,9 +121,7 @@ export default class App extends React.Component {
             expiry,
             cvc,
             focused,
-            issuer,
-            formData,
-            token
+            issuer
         } = this.state
 
         return ( <
